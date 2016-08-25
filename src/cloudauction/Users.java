@@ -33,8 +33,10 @@ public class Users {
     }        
     public boolean insertUser(String username,int instance_id) throws SQLException
     {
-        String query = "INSERT INTO user VALUES ("+id+",\""+username+"\","+instance_id+",FALSE);";
+        String query = "INSERT INTO user VALUES ("+id+",\""+username+"\","+instance_id+");";
+        id++;
         return dbcon.executeDMLQuery(query);
+        
     }
     
 }
